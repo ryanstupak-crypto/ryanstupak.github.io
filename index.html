@@ -1,381 +1,130 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ryan Stupak | RedReaperStudios</title>
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at top,#2a0000 0%,#120000 25%,#080808 70%,#000000 100%);
-    color:white;
-    line-height:1.6;
+font-family:Arial,sans-serif;
+background:radial-gradient(circle at top,#2a0000 0%,#120000 25%,#080808 70%,#000 100%);
+color:#fff;line-height:1.6
 }
-
-/* HERO */
-
-.hero{
-    min-height:85vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px;
-}
-
-.hero-content{
-    max-width:1200px;
-}
-
-.hero h1{
-    font-size:clamp(4rem,9vw,7rem);
-    font-weight:900;
-    letter-spacing:4px;
-    color:#ffffff;
-    text-transform:uppercase;
-    text-shadow:
-        0 0 10px rgba(255,0,0,.5),
-        0 0 30px rgba(255,0,0,.3);
-}
-
-.hero h2{
-    font-size:clamp(1.5rem,3vw,2.8rem);
-    font-style:italic;
-    font-weight:300;
-    color:#ff4444;
-    margin-top:10px;
-}
-
-.tagline{
-    margin-top:25px;
-    font-size:1.2rem;
-    color:#cccccc;
-}
-
-.hero-buttons{
-    margin-top:35px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    margin:8px;
-    text-decoration:none;
-    color:white;
-    border:1px solid #ff3333;
-    border-radius:40px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#aa0000;
-    box-shadow:0 0 20px rgba(255,0,0,.5);
-}
-
-/* SECTIONS */
-
-section{
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
-    color:#ff4444;
-}
-
-/* CARDS */
-
-.card{
-    background:rgba(20,20,20,.95);
-    border:1px solid rgba(255,0,0,.15);
-    border-radius:18px;
-    padding:30px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    border-color:#ff3333;
-    box-shadow:0 0 25px rgba(255,0,0,.25);
-}
-
-.grid{
-    display:grid;
-    gap:25px;
-}
-
-.three-col{
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-.two-col{
-    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
-}
-
-.price{
-    color:#ff5555;
-    font-size:1.4rem;
-    font-weight:bold;
-    margin:12px 0;
-}
-
-.card h3{
-    margin-bottom:12px;
-}
-
-/* DEMOS */
-
-.demo-card{
-    text-align:center;
-}
-
-audio{
-    width:100%;
-    margin-top:15px;
-}
-
-/* ABOUT */
-
-.about{
-    text-align:center;
-    max-width:850px;
-    margin:auto;
-    font-size:1.1rem;
-}
-
-/* CONTACT */
-
-.contact-box{
-    text-align:center;
-}
-
-.contact-email{
-    font-size:1.3rem;
-    margin:15px 0;
-    color:#ff6666;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:40px;
-    color:#777;
-    border-top:1px solid #222;
-}
-
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px}
+.hero h1{font-size:clamp(4rem,10vw,8rem);font-weight:900;text-transform:uppercase;text-shadow:0 0 20px rgba(255,0,0,.6)}
+.hero h2{font-size:clamp(1.8rem,4vw,3rem);font-style:italic;color:#ff4d4d}
+.hero-underline{width:320px;max-width:80%;height:4px;background:#ff3333;margin:10px auto 20px;box-shadow:0 0 15px red}
+.tagline{color:#ccc;font-size:1.2rem}
+.btn{display:inline-block;padding:14px 28px;margin:8px;border:1px solid #ff3333;border-radius:999px;color:#fff;text-decoration:none}
+.social-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:20px}
+.social-card{width:120px;background:#161616;border:1px solid #4a1111;border-radius:14px;padding:10px;text-decoration:none;color:#fff}
+.social-card img{width:40px;height:40px;object-fit:contain;display:block;margin:0 auto 8px}
+section{max-width:1300px;margin:auto;padding:80px 20px}
+.section-title{text-align:center;color:#ff5555;margin-bottom:40px;font-size:2.4rem}
+.grid{display:grid;gap:24px}
+.three{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.two{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+.card{background:#161616;border:1px solid #331010;border-radius:18px;padding:28px}
+.price{color:#ff6666;font-weight:bold;font-size:1.3rem;margin:10px 0}
+.video-wrap{position:relative;overflow:hidden}
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15}
+.overlay{position:relative;z-index:1}
+.contact-panel{min-height:320px;background-size:cover;background-position:center;position:relative}
+.contact-panel::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.65)}
+.contact-panel>*{position:relative;z-index:1}
+footer{text-align:center;padding:30px;color:#888}
 </style>
-
 </head>
-
 <body>
 
 <header class="hero">
-
-<div class="hero-content">
-
+<div>
 <h1>Ryan Stupak</h1>
-
 <h2>RedReaperStudios</h2>
+<div class="hero-underline"></div>
+<div class="tagline">Voice Actor • Narrator • Voice Coach<br>Content Creator</div>
 
-<div class="tagline">
-Voice Actor • Narrator • Voice Coach<br>
-Content Creator
+<div style="margin-top:25px">
+<a class="btn" href="#demos">Listen To Demos</a>
+<a class="btn" href="#contact">Contact Me</a>
 </div>
 
-<div class="hero-buttons">
-<a href="#demos" class="btn">Listen to Demos</a>
-<a href="#contact" class="btn">Contact Me</a>
+<div class="social-grid">
+<a class="social-card" href="#"><img src="youtube-vo.png"><span>VO Channel</span></a>
+<a class="social-card" href="#"><img src="youtube-gaming.png"><span>Gaming Channel</span></a>
+<a class="social-card" href="#"><img src="twitch.png"><span>Live Streaming</span></a>
+<a class="social-card" href="#"><img src="tiktok-vo.png"><span>VO Tok</span></a>
+<a class="social-card" href="#"><img src="tiktok-gaming.png"><span>Gaming Tok</span></a>
+<a class="social-card" href="#"><img src="twitter.png"><span>Social X</span></a>
+<a class="social-card" href="#"><img src="instagram.png"><span>Social Gram</span></a>
 </div>
-
 </div>
-
 </header>
 
-<section id="demos">
-
+<section id="demos" class="video-wrap">
+<video class="video-bg" autoplay muted loop playsinline>
+<source src="studio-showcase.mp4" type="video/mp4">
+</video>
+<div class="overlay">
 <h2 class="section-title">Demo Reels</h2>
-
-<div class="grid three-col">
-
-<div class="card demo-card">
-<h3>Character Demo</h3>
-<audio controls></audio>
+<div class="grid three">
+<div class="card"><h3>Character Demo</h3><audio controls></audio></div>
+<div class="card"><h3>Audiobook Demo</h3><audio controls></audio></div>
+<div class="card"><h3>Commercial Demo</h3><p>Quotes starting at $50 • Contact for quote</p><audio controls></audio></div>
 </div>
-
-<div class="card demo-card">
-<h3>Commercial Demo</h3>
-<audio controls></audio>
 </div>
-
-<div class="card demo-card">
-<h3>Audiobook Demo</h3>
-<audio controls></audio>
-</div>
-
-</div>
-
 </section>
 
 <section>
-
 <h2 class="section-title">Voice Acting Services</h2>
-
-<div class="grid three-col">
-
-<div class="card">
-<h3>Character Performance</h3>
-<div class="price">$0.12 Per Word</div>
-<p>
-Video games, animation, audio dramas, webtoons,
-indie productions, and character-driven storytelling.
-</p>
+<div class="grid three">
+<div class="card"><h3>Character Performance</h3><div class="price">$0.12 Per Word</div></div>
+<div class="card"><h3>Audiobook Narration</h3><div class="price">$150 PFH</div></div>
+<div class="card"><h3>Commercial Voiceover</h3><div class="price">Starting at $50</div><p>Contact for quote.</p></div>
 </div>
-
-<div class="card">
-<h3>Audiobook Narration</h3>
-<div class="price">$150 PFH</div>
-<p>
-Professional audiobook narration with editing,
-mastering, and character performance.
-</p>
-</div>
-
-<div class="card">
-<h3>Commercial Voiceover</h3>
-<div class="price">Starting at $50</div>
-<p>
-Commercials, advertisements, promotional videos,
-social media campaigns, and corporate narration.
-</p>
-</div>
-
-</div>
-
 </section>
 
 <section>
-
-<h2 class="section-title">About Ryan</h2>
-
-<div class="about">
-
-<p>
-Ryan Stupak is a professional voice actor, audiobook narrator,
-and coach operating under RedReaperStudios.
-</p>
-
-<br>
-
-<p>
-With published audiobook credits, character performances,
-independent productions, and ongoing creator projects,
-Ryan specializes in bringing stories and characters to life
-through engaging and memorable performances.
-</p>
-
-</div>
-
-</section>
-
-<section>
-
 <h2 class="section-title">Voice Coaching</h2>
-
-<div class="grid two-col">
-
-<div class="card">
-
-<h3>1-on-1 Personal Coaching</h3>
-
-<div class="price">
-30 Minutes — $25<br>
-60 Minutes — $50
+<div class="grid two">
+<div class="card"><h3>1-on-1 Coaching</h3><div class="price">30 Min $25<br>60 Min $50</div></div>
+<div class="card"><h3>24-Hour Clip Review</h3><div class="price">$5</div><p>Up to 2 minutes of audio.</p></div>
 </div>
+</section>
 
-<ul>
-<li>Live Direction</li>
-<li>Performance Refinement</li>
-<li>Script Analysis</li>
-<li>Practical Next Steps</li>
-<li>Session Recording Included</li>
-</ul>
-
+<section>
+<h2 class="section-title">Resume</h2>
+<div class="grid two">
+<div class="card"><h3>Character Work</h3><p>Add roles, games, webtoons, audio dramas here.</p></div>
+<div class="card"><h3>Audiobooks</h3><p>Add audiobook titles and authors here.</p></div>
 </div>
+</section>
 
-<div class="card">
+<section>
+<h2 class="section-title">About Ryan</h2>
+<div class="card"><img src="headshot.jpg" style="max-width:250px;width:100%;border-radius:16px;display:block;margin:0 auto 20px"><p>Your bio goes here.</p></div>
+</section>
 
-<h3>24 Hour Clip Review</h3>
-
-<div class="price">$5</div>
-
-<p>
-Submit up to 2 minutes of audio and receive
-detailed feedback within 24 hours.
-</p>
-
-<br>
-
-<ul>
-<li>Performance Analysis</li>
-<li>Technical Notes</li>
-<li>Actionable Improvements</li>
-<li>Fast Turnaround</li>
-</ul>
-
-</div>
-
-</div>
-
+<section>
+<h2 class="section-title">About My Setup</h2>
+<div class="card"><img src="setup-photo.jpg" style="max-width:700px;width:100%;border-radius:16px;display:block;margin:0 auto 20px"><p>Describe your studio, microphone, recording space, and workflow.</p></div>
 </section>
 
 <section id="contact">
-
 <h2 class="section-title">Contact</h2>
-
-<div class="card contact-box">
-
-<p>
-Business inquiries, voiceover bookings,
-coaching requests, and collaborations.
-</p>
-
-<div class="contact-email">
-your@email.com
+<div class="grid two">
+<div class="card contact-panel" style="background-image:url('contact-ryan.jpg')">
+<h3>Contact Ryan</h3>
+<p>Email, booking requests, coaching, collaborations.</p>
 </div>
-
-<a class="btn" href="mailto:your@email.com">
-Send Email
-</a>
-
+<div class="card contact-panel" style="background-image:url('contact-agent.jpg')">
+<h3>Contact Agent</h3>
+<p><strong>Position Available!</strong><br>Currently seeking representation.</p>
 </div>
-
+</div>
 </section>
 
-<footer>
-
-© 2026 Ryan Stupak | RedReaperStudios
-
-</footer>
-
+<footer>© 2026 Ryan Stupak | RedReaperStudios</footer>
 </body>
 </html>
